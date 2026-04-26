@@ -4,42 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Relogio cosmico interativo com metas e contagem regressiva em horario de Brasilia.">
-  <title>BEYOND | TIME</title>
+  <meta name="application-name" content="Relogio Interestelar">
+  <title>Relogio Interestelar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oxanium:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="cur" aria-hidden="true"></div>
   <div id="cur2" aria-hidden="true"></div>
   <canvas id="cv" aria-label="Relogio espacial interativo com metas"></canvas>
+  <div id="space-grade" aria-hidden="true"></div>
+  <div id="intro-warp" aria-hidden="true">
+    <div class="warp-core"></div>
+    <div class="warp-ring r1"></div>
+    <div class="warp-ring r2"></div>
+    <div class="warp-ring r3"></div>
+    <div class="warp-ring r4"></div>
+    <div class="warp-line"></div>
+  </div>
+  <div id="goal-galaxy" aria-hidden="true"></div>
 
   <header id="header">
     <div id="header-left">
-      <div>&Eacute; a terceira lei de newton, a &uacute;nica maneira que os humanos t&ecirc;m</div>
-      <div>para ir a algum lugar &eacute; deixando algo para tr&aacute;s. - Interestelar</div>
+      <div id="header-quote">
+        <span>&Eacute; a terceira lei de newton, a &uacute;nica maneira que os humanos t&ecirc;m</span>
+        <span>para ir a algum lugar &eacute; deixando algo para tr&aacute;s. - Interestelar</span>
+      </div>
     </div>
 
     <div id="header-right">
       <div id="htime">--:--:--.---</div>
       <div id="hdate"></div>
       <div id="htimezone">BRASILIA | AMERICA/SAO_PAULO</div>
-      <button id="audio-toggle" type="button">[ ativar trilha ]</button>
+      <button id="audio-toggle" type="button">Ativar trilha</button>
     </div>
   </header>
 
-  <div id="hint">hora real de brasilia | feito por rodrigo ortiz greczysczyn</div>
+  <div id="hint">hora real de brasilia | painel orbital interativo</div>
 
   <aside id="goal-card" aria-live="polite" aria-label="Detalhes da meta selecionada">
-    <button id="gc-back" type="button">[ voltar ao relogio ]</button>
+    <button id="gc-back" type="button">Voltar ao relogio</button>
 
     <div class="gc-inner">
       <div class="gc-n" id="gc-n"></div>
       <div class="gc-title" id="gc-title"></div>
       <div class="gc-when" id="gc-when"></div>
       <div class="gc-status" id="gc-status"></div>
-      <button id="gc-morse" type="button">[ ver em morse ]</button>
+      <button id="gc-morse" type="button">Ver em morse</button>
       <div class="gc-desc" id="gc-desc"></div>
       <div class="gc-detail-grid" id="gc-detail-grid"></div>
       <div class="gc-count-label" id="gc-count-label"></div>
